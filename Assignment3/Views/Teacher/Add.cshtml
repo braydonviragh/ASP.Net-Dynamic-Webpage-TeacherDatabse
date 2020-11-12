@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add a Teacher here</h2>
+<style>
+    .addform div { 
+        padding-bottom: 1em;
+    }
+</style>
+<form class="addform" action="/Teacher/List" method="get">
+    <div>
+        Teacher First Name <input type="text" placeholder="ex: Brian" /><br>
+    </div>
+    <div>
+        Teacher Last Name <input type="text" placeholder="ex: Smith" /><br>
+    </div>
+    <div>
+        Teacher ID Number <input type="text" placeholder="ex T12345" /><br>
+    </div>
+    <div>
+        Hire Date <input type="text" placeholder="2020-01-01" /><br>
+    </div>
+    <div>
+        Salary <input type="text" placeholder="$100" /><br>
+    </div>
+    <button  type="submit">Create New Teacher</button>
+</form>

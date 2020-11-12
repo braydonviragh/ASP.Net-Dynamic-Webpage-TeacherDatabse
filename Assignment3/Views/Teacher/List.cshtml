@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Assignment3.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Staff List: Teachers</h2>
+
+@foreach(Assignment3.Models.Teacher teacher in Model)
+{
+
+    <div style="text-decoration: none; padding-bottom: 1em;">
+       <a style="text-decoration: none;"href="/Teacher/Show/@teacher.TeacherId"> @teacher.TeacherFname @teacher.TeacherLname </a>
+    </div>
+}
+
+<a style="text-decoration: none; color: black; font-size: 2em;" href="/Teacher/Add"><strong>Need to add a new teacher ? Click here</strong></a>
+  
