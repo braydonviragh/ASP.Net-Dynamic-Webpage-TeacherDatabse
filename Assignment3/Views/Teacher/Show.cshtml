@@ -3,9 +3,12 @@
     ViewBag.Title = "Show";
 }
 
-<h2>Teacher @Model.TeacherId </h2>
-<strong>Teacher First name:</strong> @Model.TeacherFname 
-<br> <strong>Teacher Last Name:</strong> @Model.TeacherLname  
-<br> <strong>Salary</strong> $ @Model.Salary
-<br> <strong>Employee Number</strong> @Model.EmployeeNumber
-<br><a class="returnbtn" href="/Teacher/list">Return to Teacher List</a>
+<div id="containerShow">
+    <h2>Teacher @Model.TeacherId </h2>
+    <strong>Teacher First name:</strong> @Model.TeacherFname
+    <br> <strong>Teacher Last Name:</strong> @Model.TeacherLname
+    <br> <strong>Salary</strong> $ @Model.Salary
+    <br> <strong>Employee Number</strong> @Model.EmployeeNumber
+    <a class="navlink" href="/Teacher/list">Return to Teacher List</a>
+    <a class="navlink" href="/Teacher/DeleteConfirm/@Model.TeacherId">Delete</a>
+</div>

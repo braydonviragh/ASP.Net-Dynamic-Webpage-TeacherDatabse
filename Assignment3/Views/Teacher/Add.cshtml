@@ -9,21 +9,24 @@
         padding-bottom: 1em;
     }
 </style>
-<form class="addform" action="/Teacher/List" method="get">
+<form class="addform" action="/Teacher/Create" method="POST">
     <div>
-        Teacher First Name <input type="text" placeholder="ex: Brian" /><br>
+        <label for="TeacherFname">Teacher First Name </label> <input  required type="text" id="TeacherFname" name="TeacherFname" placeholder="ex: Brian" /><br>
     </div>
     <div>
-        Teacher Last Name <input type="text" placeholder="ex: Smith" /><br>
+        <label for="TeacherLname">Teacher Last Name </label> <input  required type="text" id="TeacherLname" name="TeacherLname" placeholder="ex: Smith" /><br>
     </div>
     <div>
-        Teacher ID Number <input type="text" placeholder="ex T12345" /><br>
+        <label for="EmployeeNumber">Teacher Employee Number </label> <input required type="text" id="EmployeeNumber"  name="EmployeeNumber" placeholder="ex T12345" /><br>
     </div>
     <div>
-        Hire Date <input type="text" placeholder="2020-01-01" /><br>
+        <label for="HireDate">Teacher Hire Date </label> <input required type="date"  id="HireDate" name="HireDate" placeholder="2020-01-01" /><br>
     </div>
     <div>
-        Salary <input type="text" placeholder="$100" /><br>
+        <label for="Salary">Teacher Salary </label> <input required type="text" id="Salary" name="Salary" placeholder="100" /><br>
     </div>
-    <button  type="submit">Create New Teacher</button>
+    <div>
+        <input type="submit" value="Create Teacher"/>
+    </div>
+
 </form>

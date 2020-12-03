@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "StudentAdd";
+}
+
+<h2>Add a Student here</h2>
+<style>
+    .addform div {
+        padding-bottom: 1em;
+    }
+</style>
+<form class="addform" action="/Student/StudentCreate" method="POST">
+    <div>
+        <label for="StudentFname">Student First Name </label> <input required type="text" id="StudentFname" name="StudentFname" placeholder="ex: Timmy" /><br>
+    </div>
+    <div>
+        <label for="StudentLname">Student Last Name </label> <input required type="text" id="StudentLname" name="StudentLname" placeholder="ex: Thompson" /><br>
+    </div>
+    <div>
+        <label for="StudentNumber">Student  Number </label> <input required type="text" id="StudentNumber" name="StudentNumber" placeholder="ex S12345" /><br>
+    </div>
+    
+    <div>
+        <input type="submit" value="Create Student" />
+    </div>
+
+</form>

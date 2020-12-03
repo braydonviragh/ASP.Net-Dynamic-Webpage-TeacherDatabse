@@ -7,12 +7,12 @@ namespace Assignment3.Models
 {
     public class Teacher
     {
-        //the following fields define a techer
+        //the following fields define a teacher
         public int TeacherId;
         public string TeacherFname;
         public string TeacherLname;
         public string EmployeeNumber;
-        public int HireDate;
+        public DateTime HireDate;
         public decimal Salary;
 
     }

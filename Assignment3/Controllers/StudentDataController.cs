@@ -100,5 +100,56 @@ namespace Assignment3.Controllers
 
             return NewStudent;
         }
+
+        [HttpPost]
+        public void AddStudent(Student NewStudent)
+        {
+            //Create connection
+            MySqlConnection Conn = School.AccessDatabase();
+
+            //Open the connection
+            Conn.Open();
+
+            //Establish command (query) for database
+            MySqlCommand cmd = Conn.CreateCommand();
+
+            //Formal SQL query
+            cmd.CommandText = "insert into students (studentfname, studentlname, studentnumber) " +
+                "values (@StudentFname, @StudentLname, @StudentNumber)";
+
+            cmd.Parameters.AddWithValue("@StudentFname", NewStudent.StudentFname);
+            cmd.Parameters.AddWithValue("@StudentLname", NewStudent.StudentLname);
+            cmd.Parameters.AddWithValue("@StudentNumber", NewStudent.StudentNumber);
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
+
+            Conn.Close();
+
+        }
+
+        [HttpPost]
+        public void DeleteStudent(int id)
+        {
+            //Create connection
+            MySqlConnection Conn = School.AccessDatabase();
+
+            //Open the connection
+            Conn.Open();
+
+            //Establish command (query) for database
+            MySqlCommand cmd = Conn.CreateCommand();
+
+            //Formal SQL query
+            cmd.CommandText = "DELETE FROM students WHERE studentid = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
+
+            Conn.Close();
+
+
+        }
     }
 }

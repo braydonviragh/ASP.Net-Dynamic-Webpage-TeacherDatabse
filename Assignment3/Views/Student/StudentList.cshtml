@@ -4,11 +4,17 @@
 }
 
 <h2>List of Students</h2>
+<form action="/Student/StudentList" method="GET">
+    <input type="text" name="SearchKey" />
+    <input type="submit" value="Search" />
+    (student search function to be completed at later date....)
+</form>
+
+<br>
 @foreach (Assignment3.Models.Student student in Model)
 {
-
     <div style="text-decoration: none; padding-bottom: 1em;">
         <a style="text-decoration: none;" href="/Student/ShowStudent/@student.StudentId"> @student.StudentFname @student.StudentLname @student.StudentNumber </a>
     </div>
 }
-
+<a style="text-decoration: none; font-size: 2em; color: black;" href="/Student/StudentAdd"><strong>Need to add a new Student ? Click here</strong></a>

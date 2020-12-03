@@ -4,6 +4,11 @@
 }
 
 <h2>Staff List: Teachers</h2>
+<form action="/Teacher/List" method="GET">
+    <input type="text" name="SearchKey" />
+    <input type="submit" value="Search" />
+    (teacher search function 99% completed...)
+</form>
 
 @foreach(Assignment3.Models.Teacher teacher in Model)
 {
