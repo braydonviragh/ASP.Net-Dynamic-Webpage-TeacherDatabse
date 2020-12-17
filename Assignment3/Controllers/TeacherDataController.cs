@@ -150,5 +150,36 @@ namespace Assignment3.Controllers
 
 
         }
+
+        public void UpdateTeacher(int id, [FromBody]Teacher TeacherInfo)
+        {
+            //Create connection
+            MySqlConnection Conn = School.AccessDatabase();
+
+            //Open the connection
+            Conn.Open();
+
+            //Establish command (query) for database
+            MySqlCommand cmd = Conn.CreateCommand();
+
+            //Formal SQL query
+            cmd.CommandText = "update teachers set teacherfname=@TeacherFname, teacherlname=@TeacherLname, employeenumber=@EmployeeNumber, salary=@Salary " +
+                "where teacherid=@TeacherId";
+               
+                
+
+            cmd.Parameters.AddWithValue("@TeacherFname", TeacherInfo.TeacherFname);
+            cmd.Parameters.AddWithValue("@TeacherLname", TeacherInfo.TeacherLname);
+            cmd.Parameters.AddWithValue("@EmployeeNumber", TeacherInfo.EmployeeNumber);
+            cmd.Parameters.AddWithValue("@Salary", TeacherInfo.Salary);
+            cmd.Parameters.AddWithValue("@TeacherId", id);
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
+
+            Conn.Close();
+
+
+        }
     }
 }

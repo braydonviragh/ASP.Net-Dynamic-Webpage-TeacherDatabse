@@ -1,0 +1,38 @@
+﻿@model Assignment3.Models.Teacher
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update Teacher here</h2>
+<style>
+    .addform div {
+        padding-bottom: 1em;
+    }
+</style>
+<form class="addform" action="/Teacher/Update/@Model.TeacherId" method="POST">
+    <div>
+        <label for="TeacherFname">Teacher First Name </label>
+        <input value="@Model.TeacherFname" required type="text" id="TeacherFname" name="TeacherFname" /><br>
+    </div>
+    <div>
+        <label for="TeacherLname">Teacher Last Name </label>
+        <input value="@Model.TeacherLname" required type="text" id="TeacherLname" name="TeacherLname" /><br>
+    </div>
+    <div>
+        <label for="EmployeeNumber">Teacher Employee Number </label>
+        <input value="@Model.EmployeeNumber" required type="text" id="EmployeeNumber" name="EmployeeNumber" /><br>
+    </div>
+    <div>
+        <label for="Salary">Teacher Salary </label>
+        <input value="@Model.Salary" required type="text" id="Salary" name="Salary" placeholder="100" /><br>
+    </div>
+    <div>
+        <input type="submit" value="Update Teacher" />
+    </div>
+
+
+</form>
+<a style="float: left; font-size: 2em; color: orangered" class="navlink" href="/Teacher/list">Return to Teacher List</a>
+<a style="float: left; font-size: 2em" class="navlink" href="/Teacher/show/@Model.TeacherId">Back</a>
+<br>
+

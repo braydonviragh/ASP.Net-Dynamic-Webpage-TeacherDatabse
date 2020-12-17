@@ -273,6 +273,7 @@
     <Content Include="Views\Teacher\DeleteConfirm.cshtml" />
     <Content Include="Views\Student\StudentAdd.cshtml" />
     <Content Include="Views\Student\StudentDeleteConfirm.cshtml" />
+    <Content Include="Views\Teacher\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
